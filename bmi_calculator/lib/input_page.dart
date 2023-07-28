@@ -34,35 +34,35 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: CustomCard(
+                    color: selectedGender == Gender.male
+                        ? selectedCardColor
+                        : inactiveCardColor,
+                    cardChild: const IconText(
+                      text: 'MALE',
+                      icon: FontAwesomeIcons.mars,
+                    ),
+                    onPressed: () {
                       setState(() {
                         selectedGender = Gender.male;
                       });
                     },
-                    child: CustomCard(
-                      color: selectedGender == Gender.male ? selectedCardColor : inactiveCardColor,
-                      cardChild: const IconText(
-                        text: 'MALE',
-                        icon: FontAwesomeIcons.mars,
-                      ),
-                    ),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: CustomCard(
+                    color: selectedGender == Gender.female
+                        ? selectedCardColor
+                        : inactiveCardColor,
+                    cardChild: const IconText(
+                      text: 'FEMALE',
+                      icon: FontAwesomeIcons.venus,
+                    ),
+                    onPressed: () {
                       setState(() {
                         selectedGender = Gender.female;
                       });
                     },
-                    child: CustomCard(
-                      color: selectedGender == Gender.female ? selectedCardColor : inactiveCardColor,
-                      cardChild: const IconText(
-                        text: 'FEMALE',
-                        icon: FontAwesomeIcons.venus,
-                      ),
-                    ),
                   ),
                 ),
               ],
