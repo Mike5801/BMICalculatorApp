@@ -4,12 +4,11 @@ import '../components/custom_card.dart';
 import 'package:flutter/material.dart';
 
 class ResultsPage extends StatelessWidget {
-  const ResultsPage({super.key});
+  const ResultsPage({required this.conclusion, required this.result, required this.description, super.key});
 
-  final String conclusion = 'Overweight';
-  final double result = 26.7;
-  final String description =
-      'You have a higher than normal body weight. Try to exercise more';
+  final String conclusion;
+  final String result;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +39,7 @@ class ResultsPage extends StatelessWidget {
                     conclusion,
                     style: kConclusionTextStyle,
                   ),
-                  Text(result.toString(), style: kResultTextStyle),
+                  Text(result, style: kResultTextStyle),
                   Text(
                     description,
                     style: kDescriptionTextStyle,
